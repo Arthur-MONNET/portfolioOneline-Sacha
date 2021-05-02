@@ -7,7 +7,7 @@ window.addEventListener("load", function (event) {
 });
 
 const requestProjects = async () => {
-    const response = await axios.get(`https://portfolioarthur.herokuapp.com/getProject`)
+    const response = await axios.get(`https://portfoliosacha.herokuapp.com/getProject`)
     try {
         return response
     } catch (err) {
@@ -79,7 +79,7 @@ requestProjects().then(response => {
     nbProject=nbProject/2
 })
 const requestUser = async () => {
-    const response = await axios.get(`https://portfolioarthur.herokuapp.com/getUser`)
+    const response = await axios.get(`https://portfoliosacha.herokuapp.com/getUser`)
     try {
         return response
     } catch (err) {
