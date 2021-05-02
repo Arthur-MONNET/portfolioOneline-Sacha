@@ -1,0 +1,38 @@
+body{
+  height : 100vh;
+}
+.data_contact{
+ height: 60px;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+#data_contact1{
+  align-items: flex-end;
+}
+#data_contact2{
+  align-items: center;
+}
+#data_contact3{
+  align-items: flex-start;
+}
+.data_contact h3{
+  color: #f74f1c;
+  font-size: 20px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+}
+#data_contact1 h3{
+  margin-right: 12px;
+}
+.data_contact h5{
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  color: white;
+}
+#data_contact3 h5{
+  margin-left: 12px;
+}

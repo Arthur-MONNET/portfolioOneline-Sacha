@@ -1,0 +1,11 @@
+body{
+  height : 200vh;
+}
+.button{
+  transition: transform 0.2s, opacity 0.1s;
+}
+.button:hover{
+  transform: scale(1.1,0.9);
+  opacity: 0.8;
+}
+

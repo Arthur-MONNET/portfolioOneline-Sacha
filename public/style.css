@@ -1,0 +1,212 @@
+*{
+    padding: 0;
+    margin: 0;
+    cursor: none;
+}
+html{
+    height : 200vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+nav{
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: calc(100vw - 100px);
+    margin: 0 50px;
+    height: 150px;
+}
+#iconNav{
+    width : 90px;
+    height : 90px;
+    margin: 30px;
+}
+#menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 500px;
+    color: white;
+}
+#firstPage{
+    top : 0;
+    height: calc(100vh - 280px);
+    width: 60vw;
+    padding: 200px 20vw 80px 20vw;
+    background: #060245;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#contacts{
+    top : 0;
+    height: calc(100vh - 280px);
+    width: 60vw;
+    padding: 200px 20vw 80px 20vw;
+    background: #060245;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#imgPres{
+    width :40vw;
+    height :100%;
+}
+#presFirstPage{
+    width :350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#secondIcon{
+    width: 250px;
+    height: 250px;
+}
+#underFistPage{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#slideAndImg{
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#contentSlide{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#imgSlide{
+    background: #d0d0e7;
+    width: 37vw;
+    height:32vw;
+    clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );
+}
+#decoSlide{
+    right: -20px;
+    height: 100vh;
+    width: 30vw;
+    position: absolute;
+    z-index: -2;
+    background: #c3c3e9;
+}
+#arrows{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 120px;
+    height: 40px;
+}
+#arrowLeft{
+    width: 40px;
+    height: 40px;
+    background: aquamarine;
+}
+#arrowRight{
+    width: 40px;
+    height: 40px;
+    background: aquamarine;
+}
+.imgProject{
+    width: 100%;
+    height: 30%;
+    margin: 5vh 0;
+}
+#linkCreations{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: #f3f3f3 solid 3px;
+    padding:2px 5px;
+}
+#firstPageLine{
+    height: 100px;
+    width: 6px;
+    border-radius: 3px;
+    background: white;
+    margin: 0 100px;
+}
+#name{
+    width: 350px;
+    text-align: end;
+    font-size: 50px;
+}
+#underName{
+    width: 350px;
+    text-align: end;
+}
+#pointer{
+    transition: transform 500ms, background 100ms;
+    width: 10px;
+    height: 10px;
+    background: #ec8600;
+    border: solid 1px #ec8600;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+}
+#titleProjects{
+    width: 100vw;
+    height: 300px;
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#listProjects{
+    display: flex;
+    flex-direction: column;
+    padding: 0 7vw;
+}
+.projects{
+    padding :5vh 0 ;
+    display: flex;
+    height: 30vh;
+    align-items: flex-start;
+}
+.imageProjects{
+    height: 30vh;
+
+    width: 45vw;
+}
+#underName{
+    color: white;
+}
+#name{
+    color: white;
+}
+.numProject{
+    height: 30vh;
+    padding:0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.lineProject{
+    height: 200px;
+    width: 2px;
+    border-radius: 1px;
+    background: black;
+}
