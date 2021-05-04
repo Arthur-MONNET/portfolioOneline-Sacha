@@ -1,29 +1,21 @@
 {
-  "name": "portfolio-oneline",
+  "name": "portfolioOneline-Sacha",
   "version": "1.0.0",
-  "description": "Site de portfolio en ligne",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon -r dotenv/config index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Arthur-MONNET/portfolioOneline-Sacha.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Arthur-MONNET/portfolioOneline-Sacha/issues"
-  },
-  "homepage": "https://github.com/Arthur-MONNET/portfolioOneline-Sacha#readme",
   "dependencies": {
     "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.7"
   }
 }
