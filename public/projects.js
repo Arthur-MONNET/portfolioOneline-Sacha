@@ -27,10 +27,53 @@ window.addEventListener("load", () => {
             } else {
                 order = "row", orderText = ""
             }
+            document.querySelector(".projects .imageProjects").style="margin-top:0"
+            setTimeout(()=>{
+                document.querySelector(".projects .lineProject").style="height:60%"
+                document.querySelector(".projects .numProject h2").style="opacity:1;margin-bottom : 0"
+                if (document.querySelector(".projects").style.flexDirection === "row-reverse"){
+                    document.querySelector(".projects h3").style=`opacity:1;margin-left : 135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                    document.querySelector(".projects h3").style=`opacity:1;margin-left : 0px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                }else{
+                    document.querySelector(".projects h3").style=`opacity:1;margin-left : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                    document.querySelector(".projects h3").style=`opacity:1;margin-left : 0;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                }
+            },100)
         }
     },1000)
 
 
 
+})
+window.addEventListener("scroll", () => {
+    let i = 0;
+    document.querySelectorAll(`.projects`).forEach(project=>{
+        i++;
+        if (window.scrollY+window.innerHeight > window.innerHeight*4/10 + (window.innerHeight/2)*i){
+            project.querySelector(".imageProjects").style="margin-top:0"
+
+            setTimeout(()=>{
+                project.querySelector(".lineProject").style="height:60%"
+                project.querySelector(".numProject h2").style="opacity:1;margin-bottom : 0"
+                if (project.style.flexDirection === "row-reverse"){
+                    project.querySelector(".textProject h3").style=`opacity:1;margin-left : 0;text-align: ${project.querySelector("h3").style.textAlign}`
+                }else{
+                    project.querySelector(".textProject h3").style=`opacity:1;margin-left : 0;text-align: ${project.querySelector("h3").style.textAlign}`
+                }
+
+            },100)
+        } else {
+            project.querySelector(".imageProjects").style=""
+            setTimeout(()=>{
+                project.querySelector(".lineProject").style=""
+                project.querySelector(".numProject h2").style=""
+                if (project.style.flexDirection === "row-reverse"){
+                    project.querySelector(".textProject h3").style=`opacity:0;margin-left : 135px;text-align: ${project.querySelector("h3").style.textAlign}`
+                }else{
+                    project.querySelector(".textProject h3").style=`opacity:0;margin-left : -135px;text-align: ${project.querySelector("h3").style.textAlign}`
+                }
+            },100)
+        }
+    })
 })
 

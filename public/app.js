@@ -7,7 +7,7 @@ window.addEventListener("load", function (event) {
 });
 
 const requestProjects = async () => {
-    const response = await axios.get(`https://portfolioarthur.herokuapp.com/getProject`)
+    const response = await axios.get(`http://localhost:3000/getProject`)
     try {
         return response
     } catch (err) {
@@ -50,13 +50,13 @@ requestProjects().then(response => {
                 if (dataProjects[i].tags[j].indexOf("image1") !== -1) {
                     if (indexProject !== 0) {
                         listProject[indexProject].color = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$color") + 7, dataProjects[i].description.indexOf("!color"))
-                        listProject[indexProject].title = dataProjects[i].title.replace("_", " ")
+                        listProject[indexProject].title = dataProjects[i].title.replaceAll("_", " ")
                         listProject[indexProject].img1 = dataProjects[i].images.hidpi
                         listProject[indexProject].desc1 = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$desc") + 6, dataProjects[i].description.indexOf("!desc"))
                     } else {
                         img1 = dataProjects[i].images.hidpi
                         color = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$color") + 7, dataProjects[i].description.indexOf("!color"))
-                        title = dataProjects[i].title.replace("_", " ")
+                        title = dataProjects[i].title.replaceAll("_", " ")
                         desc1 = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$desc") + 6, dataProjects[i].description.indexOf("!desc"))
 
                     }
@@ -79,7 +79,7 @@ requestProjects().then(response => {
     nbProject=nbProject/2
 })
 const requestUser = async () => {
-    const response = await axios.get(`https://portfolioarthur.herokuapp.com/getUser`)
+    const response = await axios.get(`http://localhost:3000/getUser`)
     try {
         return response
     } catch (err) {

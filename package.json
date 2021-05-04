@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arthur-MONNET/portfolioOneline.git"
+    "url": "git+https://github.com/Arthur-MONNET/portfolioOneline-Sacha.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Arthur-MONNET/portfolioOneline/issues"
+    "url": "https://github.com/Arthur-MONNET/portfolioOneline-Sacha/issues"
   },
-  "homepage": "https://github.com/Arthur-MONNET/portfolioOneline#readme",
+  "homepage": "https://github.com/Arthur-MONNET/portfolioOneline-Sacha#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
