@@ -87,9 +87,10 @@ requestProjects().then(response => {
         }
     }
     console.log(listProject)
+    console.log(nbProject)
     console.log(listCat)
 
-    nbProject = nbProject / 2
+    nbProject = (nbProject+1) / 2
 })
 const requestUser = async () => {
     const response = await axios.get(`./getUser`)
