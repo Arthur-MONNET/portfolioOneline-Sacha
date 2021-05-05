@@ -8,7 +8,9 @@ let params = (new URL(document.location)).searchParams;
 let projectIndex = parseInt(params.get('project'))
 
 window.addEventListener("load", () => {
+
     setTimeout(()=>{
+
         titleProject.innerHTML = listProject[projectIndex].title
         image1.src = listProject[projectIndex].img1
         text1.innerHTML= listProject[projectIndex].desc1

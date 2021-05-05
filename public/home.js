@@ -29,12 +29,14 @@ window.addEventListener("load", () => {
         for (let i = 0; i < nbCat; i++) {
             document.querySelector("#pointSlide").innerHTML += `<div class="point"></div>`
         }
+
         changeSlide(numSlide, 0)
     }, 1000)
 })
 
 
 function changeSlide(num, mov) {
+    document.querySelector("#linkCreations").href = `projects.html?cat=${num}`
     document.querySelector("#pointSlide h3").innerHTML = num
     document.querySelector(`#pointSlide :nth-child(${num + 2})`).style = "background : white"
     console.log(num)

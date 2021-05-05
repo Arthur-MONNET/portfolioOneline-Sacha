@@ -34,7 +34,7 @@ nav{
 #iconNav{
   width : 80px;
   height : 80px;
-  margin: 30px;
+  margin: 30px 0;
   transition: fill 1s ease;
 }
 
@@ -210,13 +210,30 @@ nav{
   margin-bottom: -5vh;
   padding-top: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 #titleProjects h1{
   font-family: 'Raleway', sans-serif;
+  margin-bottom: 10vh;
   font-size: 70px;
   font-weight: 600;
+}
+#titleProjects a{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+#titleProjects p{
+  font-family: 'Raleway', sans-serif;
+  margin:0 1vw;
+  font-size: 30px;
+  font-weight: 200;
+}
+#cats{
+  display: flex;
+  align-items: center;
 }
 #listProjects{
   display: flex;
