@@ -7,7 +7,7 @@ window.addEventListener("load", function (event) {
 });
 
 const requestProjects = async () => {
-    const response = await axios.get(`http://localhost:3000/getProject`)
+    const response = await axios.get(`./getProject`)
     try {
         return response
     } catch (err) {
@@ -92,7 +92,7 @@ requestProjects().then(response => {
     nbProject = nbProject / 2
 })
 const requestUser = async () => {
-    const response = await axios.get(`http://localhost:3000/getUser`)
+    const response = await axios.get(`./getUser`)
     try {
         return response
     } catch (err) {
