@@ -53,7 +53,8 @@ body{
   background: black;
 }
 #img2{
-  height: 35vh;
+  width: 100vw;
+  object-fit: cover;
 }
 #text2{
   width: 100%;

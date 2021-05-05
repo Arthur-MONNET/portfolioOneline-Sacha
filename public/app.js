@@ -16,19 +16,20 @@ const requestProjects = async () => {
 }
 let dataProjects;
 let nbProject = 0
-let img1, img2, desc1, desc2, title, color, indexProject, listProject = []
+let nbCat = 0
+let img1, img2, desc1, desc2, title, color, indexProject, indexCat, listProject = [], listCat = []
 requestProjects().then(response => {
     console.log(response.data)
     dataProjects = response.data
 
 
     for (let i = 0; i < dataProjects.length; i++) {
-        indexProject = 0, img1 = 0, desc1 = 0, img2 = 0, desc2 = 0, title = 0, color = 0;
+        indexProject = 0, indexCat = 0, img1 = 0, desc1 = 0, img2 = 0, desc2 = 0, title = 0, color = 0;
         for (let j = 0; j < dataProjects[i].tags.length; j++) {
             if (dataProjects[i].tags[j].indexOf("project") !== -1) {
                 nbProject++
                 indexProject = dataProjects[i].tags[j].substring(dataProjects[i].tags[j].indexOf("project") + 7, dataProjects[i].tags[j].indexOf("project") + 8)
-                if(!listProject[indexProject]){
+                if (!listProject[indexProject]) {
                     listProject[indexProject] = new Object();
                 }
 
@@ -71,12 +72,20 @@ requestProjects().then(response => {
                     }
                 }
             }
+            if (dataProjects[i].tags[j].indexOf("categorie") !== -1) {
+                indexCat = dataProjects[i].tags[j].substring(dataProjects[i].tags[j].indexOf("categorie") + 9, dataProjects[i].tags[j].indexOf("categorie") + 10)
+                listCat[indexCat] = new Object()
+                listCat[indexCat].color = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$color") + 7, dataProjects[i].description.indexOf("!color"));
+                listCat[indexCat].name = dataProjects[i].title.replaceAll("_", " ");
+                listCat[indexCat].img = dataProjects[i].images.hidpi
+                nbCat++
+            }
         }
     }
-    console.log("length  " + listProject[2].title.length)
     console.log(listProject)
+    console.log(listCat)
 
-    nbProject=nbProject/2
+    nbProject = nbProject / 2
 })
 const requestUser = async () => {
     const response = await axios.get(`http://localhost:3000/getUser`)
@@ -95,43 +104,45 @@ window.addEventListener("scroll", () => {
     scrollWrap.style.transform = `translateY(${-window.scrollY}px)`
 })
 
+let pointer = document.querySelector("#pointer");
 
 window.addEventListener("load", () => {
 //pointer
-    setTimeout(()=>{
-        let pointer = document.querySelector("#pointer");
-        let alla = document.querySelectorAll("a, .button");
-        document.addEventListener('mousemove', logKey);
+    document.addEventListener('mousemove', logKey);
+    document.addEventListener('mouseover', mouseIn)
+    document.addEventListener('mouseout', mouseout)
+    setTimeout(() => {
+        let alla = document.querySelectorAll("a, .button, button");
+
         alla.forEach(a => {
             a.addEventListener('mouseover', logKeyOver);
             a.addEventListener('mouseout', logKeyNoOver);
         })
 
-        document.addEventListener('mouseover', mouseIn)
-        document.addEventListener('mouseout', mouseout)
 
-        function logKey(e) {
-            pointer.style.top = `${e.clientY - 6}px`;
-            pointer.style.left = `${e.clientX - 6}px`;
-        }
-
-        function logKeyOver(e) {
-            pointer.style.transform = `scale(2)`;
-            pointer.style.background = "#f74f1c00";
-        }
-
-        function logKeyNoOver(e) {
-            pointer.style.transform = `scale(1)`;
-            pointer.style.background = "#f74f1c";
-        }
-
-        function mouseout(e) {
-            pointer.style.display = `none`;
-        }
-
-        function mouseIn(e) {
-            pointer.style.display = `block`;
-        }
-    },1100)
+    }, 1100)
 
 })
+
+function logKey(e) {
+    pointer.style.top = `${e.clientY - 6}px`;
+    pointer.style.left = `${e.clientX - 6}px`;
+}
+
+function logKeyOver(e) {
+    pointer.style.transform = `scale(2)`;
+    pointer.style.background = "#f74f1c00";
+}
+
+function logKeyNoOver(e) {
+    pointer.style.transform = `scale(1)`;
+    pointer.style.background = "#f74f1c";
+}
+
+function mouseout(e) {
+    pointer.style.display = `none`;
+}
+
+function mouseIn(e) {
+    pointer.style.display = `block`;
+}

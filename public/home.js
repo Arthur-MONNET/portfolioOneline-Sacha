@@ -5,73 +5,83 @@ const arrowLeft = document.querySelector("#arrowLeft")
 const arrowRight = document.querySelector("#arrowRight")
 let numSlide = 1
 let calcMove
+const colors = document.querySelectorAll("#buttonsColor button")
+colors.forEach(colorChoice => {
+    colorChoice.addEventListener("click", () => {
+        console.log(document.querySelector("#firstPage").style)
+        document.querySelector("#firstPage").style = `background-color: ${colorChoice.style.backgroundColor}`
+    })
+})
+
 window.addEventListener("scroll", () => {
     if (window.scrollY > window.innerHeight - 80) {
         menu.style.color = "black"
-
-        document.querySelectorAll(".cls-1").forEach(logoSvg => {
-            logoSvg.style = "fill:#000"
-        })
+        document.querySelector("#pointMenu").style = "background:#000"
+        document.querySelector("#iconNav").style = "fill:#000"
     } else {
         menu.style.color = "white"
-        document.querySelectorAll(".cls-1").forEach(logoSvg => {
-            logoSvg.style = "fill:#fff"
-        })
+        document.querySelector("#pointMenu").style = "background:#fff"
+        document.querySelector("#iconNav").style = "fill:#fff"
     }
 })
 window.addEventListener("load", () => {
     setTimeout(() => {
+        for (let i = 0; i < nbCat; i++) {
+            document.querySelector("#pointSlide").innerHTML += `<div class="point"></div>`
+        }
         changeSlide(numSlide, 0)
     }, 1000)
 })
 
 
 function changeSlide(num, mov) {
+    document.querySelector("#pointSlide h3").innerHTML = num
+    document.querySelector(`#pointSlide :nth-child(${num + 2})`).style = "background : white"
     console.log(num)
     /////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////calc title ///////////////////////////////
+    ///////////////////////////////calc name ///////////////////////////////
     /////////////////////////////////////////////////////////////////////////
     textTitle.innerHTML = ""
-    textTitle.innerHTML = `<h2 style="display:none">${listProject[num].title.toUpperCase()}</h2>`
-    console.log("width title : " + (document.querySelector("#textTitle h2").offsetWidth) + "   center of wrapper : " + window.innerWidth * (36 / 100))
-    let sizeText = listProject[num].title.length
+    textTitle.innerHTML = `<h2 style="display:none">${listCat[num].name.toUpperCase()}</h2>`
+    console.log("width name : " + (document.querySelector("#textTitle h2").offsetWidth) + "   center of wrapper : " + window.innerWidth * (36 / 100))
+    let sizeText = listCat[num].name.length
     console.log(document.querySelector("#textTitle h2").textContent.substring(0, 14).indexOf(" "))
     let indexS = 14
     if (sizeText > 14) {
-        console.log(listProject[num].title.substring(0, 14)+"$")
-        indexS = listProject[num].title.substring(0, 14).lastIndexOf(" ")
-        textTitle.style=`height : 140px`
-    }else{
-        textTitle.style=`height : 70px`
+        console.log(listCat[num].name.substring(0, 14) + "$")
+        indexS = listCat[num].name.substring(0, 14).lastIndexOf(" ")
+        textTitle.style = `height : 140px`
+    } else {
+        textTitle.style = `height : 70px`
     }
     console.log(indexS)
-    textTitle.innerHTML = `<h2>${listProject[num].title.substring(0, indexS).toUpperCase()}</h2>`
+    textTitle.innerHTML = `<h2>${listCat[num].name.substring(0, indexS).toUpperCase()}</h2>`
     console.log(document.querySelector("#textTitle h2").offsetWidth / 2)
     let leftLetter = window.innerWidth * (26 / 100) - (document.querySelector("#textTitle h2").offsetWidth / 2)
     textTitle.innerHTML = ""
 
     /////////////////////////////////////////////////////////////////////////
-    //////////////////////////////create title //////////////////////////////
+    //////////////////////////////create name //////////////////////////////
     /////////////////////////////////////////////////////////////////////////
 
-    for (let i = 0; i < listProject[num].title.length; i++) {
+    for (let i = 0; i < listCat[num].name.length + 1; i++) {
 
-        if (listProject[num].title.substring(i, i + 1) === " ") {
+        if (listCat[num].name.substring(i, i + 1) === " ") {
             textTitle.innerHTML += `<div class="spaceTitle"></div>`
             if (i === indexS) {
-                textTitle.innerHTML += `<h2>${listProject[num].title.substring(indexS,listProject[num].title.length).toUpperCase()}</h2>`
+                textTitle.innerHTML += `<h2>${listCat[num].name.substring(indexS, listCat[num].name.length).toUpperCase()}</h2>`
                 console.log(document.querySelector("#textTitle :last-child").offsetWidth / 2)
                 leftLetter = window.innerWidth * (26 / 100) - (document.querySelector("#textTitle :last-child").offsetWidth / 2)
                 document.querySelector("#textTitle :last-child").classList.add("none")
-            }else{
+            } else {
                 leftLetter += document.querySelector("#textTitle :last-child").offsetWidth
             }
         } else {
-            textTitle.innerHTML += `<h2>${listProject[num].title.substring(i, i + 1).toUpperCase()}</h2>`
+            textTitle.innerHTML += `<h2>${listCat[num].name.substring(i, i + 1).toUpperCase()}</h2>`
             if (i > indexS) {
-                document.querySelector("#textTitle :last-child").style = `left: ${leftLetter}px;opacity:0;margin-left :${50*mov}px;margin-top: 70px;`
-            }else{
-                document.querySelector("#textTitle :last-child").style = `left: ${leftLetter}px;opacity:0;margin-left :${50*mov}px;`
+                document.querySelector("#textTitle :last-child").style = `left: ${leftLetter}px;opacity:0;margin-left :${50 * mov}px;margin-top: 70px;`
+            } else {
+                document.querySelector("#textTitle :last-child").style = `left: ${leftLetter}px;opacity:0;margin-left :${50 * mov}px;`
             }
             leftLetter += document.querySelector("#textTitle :last-child").offsetWidth
         }
@@ -79,72 +89,70 @@ function changeSlide(num, mov) {
     }
 
     let letters = Array.from(document.querySelectorAll("#textTitle h2"))
-    if(mov===-1){
-        for (let i = listProject[numSlide].title.length-2; i > -1; i--) {
+    if (mov === -1) {
+        for (let i = listCat[numSlide].name.length; i > -1; i--) {
             setTimeout(() => {
-                letters[letters.length-1-i].style = `left:${letters[letters.length-1-i].style.left};margin-top:${letters[letters.length-1-i].style.marginTop};margin-left :0;opacity:1`
+                letters[letters.length - 1 - i].style = `left:${letters[letters.length - 1 - i].style.left};margin-top:${letters[letters.length - 1 - i].style.marginTop};opacity:1`
             }, 10 * i)
         }
-    }else{
-        for (let i = 0; i < listProject[numSlide].title.length - 1; i++) {
+    } else {
+        for (let i = 0; i < listCat[numSlide].name.length; i++) {
             setTimeout(() => {
-                letters[i].style = `left:${letters[i].style.left};margin-top:${letters[i].style.marginTop};margin-left :0;opacity:1`
+                letters[i].style = `left:${letters[i].style.left};margin-top:${letters[i].style.marginTop};opacity:1`
             }, 10 * i)
         }
     }
 
-    arrows.style = `color : ${listProject[num].color}aa`
-    document.querySelector("#imgSlide").src = listProject[num].img1
-    document.querySelector("#descProject").innerHTML = listProject[num].desc1
-    document.querySelector("#descProject").style="opacity:1"
+    arrows.style = `color : ${listCat[num].color}dd`
+    document.querySelector("#imgSlide").src = listCat[num].img
     linkCreation.addEventListener("mouseover", () => {
-        linkCreation.style = `border: ${listProject[num].color}00 solid 3px; background: ${listProject[num].color}99; color : white`
+        linkCreation.style = `border: ${listCat[num].color}00 solid 3px; background: ${listCat[num].color}cc; color : white`
     })
     linkCreation.addEventListener("mouseout", () => {
-        linkCreation.style = `border: ${listProject[num].color}99 solid 3px`
+        linkCreation.style = `border: ${listCat[num].color}99 solid 3px`
     })
-    linkCreation.style = `border: ${listProject[num].color}99 solid 3px`
-    document.querySelector("#decoSlide").style = `background : ${listProject[num].color}`
+    linkCreation.style = `border: ${listCat[num].color}99 solid 3px`
+    document.querySelector("#decoSlide").style = `background : ${listCat[num].color}`
 }
 
 arrowLeft.addEventListener("click", () => {
     let letters = Array.from(document.querySelectorAll("#textTitle h2"))
     let nbLetters = 0;
-    for (let i = listProject[numSlide].title.length-2; i > -1; i--) {
+    for (let i = listCat[numSlide].name.length - 2; i > -1; i--) {
         setTimeout(() => {
-            letters[letters.length-1-i].style = `left:${letters[letters.length-1-i].style.left};margin-top:${letters[letters.length-1-i].style.marginTop};margin-left :50px;opacity:0`
+            letters[letters.length - 1 - i].style = `left:${letters[letters.length - 1 - i].style.left};margin-top:${letters[letters.length - 1 - i].style.marginTop};margin-left :50px;opacity:0`
         }, 10 * i)
         nbLetters++;
     }
-    document.querySelector("#descProject").style="opacity:0"
+    document.querySelector(`#pointSlide :nth-child(${numSlide + 2})`).style = "background : black"
     numSlide--
-    if (numSlide <1) {
-        numSlide =  nbProject
+    if (numSlide < 1) {
+        numSlide = nbCat
     }
     console.log(numSlide)
     setTimeout(() => {
         changeSlide(numSlide, -1)
-    }, 10 * nbLetters+50)
+    }, 10 * nbLetters + 50)
 
 })
 arrowRight.addEventListener("click", () => {
     let letters = Array.from(document.querySelectorAll("#textTitle h2"))
     let nbLetters = 0;
-    for (let i = 0; i < listProject[numSlide].title.length - 1; i++) {
+    for (let i = 0; i < listCat[numSlide].name.length - 1; i++) {
         setTimeout(() => {
             letters[i].style = `left:${letters[i].style.left};margin-top:${letters[i].style.marginTop};margin-left :-50px;opacity:0`
         }, 10 * i)
         nbLetters++;
     }
-    document.querySelector("#descProject").style="opacity:0"
+    document.querySelector(`#pointSlide :nth-child(${numSlide + 2})`).style = "background : black"
     numSlide++
-    if (numSlide > nbProject) {
+    if (numSlide > nbCat) {
         numSlide = 1
     }
     console.log(numSlide)
     setTimeout(() => {
         changeSlide(numSlide, 1)
-    }, 10 * nbLetters+50)
+    }, 10 * nbLetters + 50)
 })
 
 

@@ -32,10 +32,12 @@ nav{
   height: 100px;
 }
 #iconNav{
-  width : 60px;
-  height : 60px;
+  width : 80px;
+  height : 80px;
   margin: 30px;
+  transition: fill 1s ease;
 }
+
 #menu{
   display: flex;
   flex-direction: row;
@@ -43,22 +45,45 @@ nav{
   justify-content: space-around;
   width: 650px;
   transition: color 1s ease;
+
 }
 .wordMenu{
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 300;
+  font-weight: 200;
+  margin-bottom: 0;
+  transition: margin-bottom 0.2s,font-weight 0.2s;
 }
+.wordMenu:hover{
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+#menu a{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+#pointMenu{
+  margin-top: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transition: background 1s ease;
+}
+
 #firstPage{
   top : 0;
   height: calc(100vh - 280px);
   width: 60vw;
   padding: 200px 20vw 80px 20vw;
-  background: #0A192E;
+  background: #FD6247;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: background-color 2s;
 }
 #contacts{
   top : 0;
@@ -76,7 +101,7 @@ nav{
   height :100%;
 }
 #presFirstPage{
-  width :350px;
+  width :500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,8 +123,7 @@ nav{
 }
 #slideAndImg{
   height: 60vh;
-  width: 90vw;
-  margin-left: 10vw;
+  width: 80vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -113,11 +137,10 @@ nav{
   justify-content: center;
 }
 #imgSlide{
-  background: #d0d0e7;
   transition: background-image 0.5s;
-  width: 45vw;
-  height:32vw;
-  object-fit: cover;
+  width: 40vw;
+  height:28vw;
+  object-fit: contain;
   //clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );
   z-index: 1;
 }
@@ -153,20 +176,21 @@ nav{
   transition: border 0.5s, background 0.5s, color 0.2s;
 }
 #firstPageLine{
-  height: 100px;
-  width: 6px;
-  border-radius: 3px;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
   background: white;
   margin: 0 100px;
 }
 #name{
-  width: 350px;
-  text-align: end;
-  font-size: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 4.5vw;
+  font-weight: bold;
 }
 #underName{
-  width: 350px;
-  text-align: end;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8vw;
+  font-weight: 100;
 }
 #pointer{
   transition: transform 500ms, background 100ms;
@@ -183,6 +207,7 @@ nav{
 #titleProjects{
   width: 100vw;
   height: 40vh;
+  margin-bottom: -5vh;
   padding-top: 100px;
   display: flex;
   align-items: center;
@@ -199,7 +224,7 @@ nav{
   width: 80vw;
 }
 .projects{
-  padding :10vh 0 ;
+  padding :15vh 0 ;
   display: flex;
   height: 30vh;
   justify-content: center;

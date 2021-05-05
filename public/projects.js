@@ -6,7 +6,7 @@ let orderText = "";
 window.addEventListener("load", () => {
     setTimeout(()=>{
         const body = document.querySelector("body")
-        body.style.height = `calc(40vh + 100px + ${50 * nbProject}vh`
+        body.style.height = `calc(20vh + 100px + ${60 * nbProject}vh`
         console.log(nbProject)
         for (let i = 1; i < nbProject+1; i++) {
             console.log(numProject);
@@ -49,7 +49,7 @@ window.addEventListener("scroll", () => {
     let i = 0;
     document.querySelectorAll(`.projects`).forEach(project=>{
         i++;
-        if (window.scrollY+window.innerHeight > window.innerHeight*4/10 + (window.innerHeight/2)*i){
+        if (window.scrollY+window.innerHeight > window.innerHeight*3.5/10 + (window.innerHeight*6/10)*i){
             project.querySelector(".imageProjects").style="margin-top:0"
 
             setTimeout(()=>{
