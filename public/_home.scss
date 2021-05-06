@@ -3,11 +3,10 @@ body{
 }
 
 .button{
-  transition: transform 0.2s, opacity 0.1s;
+  transition: filter 0.2s;
 }
 .button:hover{
-  transform: scale(1.1,0.9);
-  opacity: 0.8;
+  filter : brightness(0.9) saturate(2.4);
 }
 #buttonsColor {
   position: absolute;
@@ -41,16 +40,16 @@ body{
 #linePointSlide{
   margin-top: 60px;
   background: black;
-  width: 3px;
-  height: 35px;
+  width: 2px;
+  height: 25px;
   border-radius: 8px;
 }
 .point{
-  margin-top: 15px;
+  margin-top: 10px;
   background: black;
   border: solid black 1px;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   transition: background 0.5s;
 }

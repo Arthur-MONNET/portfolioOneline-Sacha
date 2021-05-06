@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 });
 
 async function requestShots() {
-    const response = await axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}`)
+    const response = await axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}&per_page=100`)
     try {
         app.get("/getProject", (req, res) => {
             res.send(response.data)

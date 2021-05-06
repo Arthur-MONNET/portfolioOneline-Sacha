@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
 
 
 function changeSlide(num, mov) {
-    document.querySelector("#linkCreations").href = `projects.html?cat=${num}`
+    document.querySelector("#linkCreations").href = `projects.html?cat=0`
     document.querySelector("#pointSlide h3").innerHTML = num
     document.querySelector(`#pointSlide :nth-child(${num + 2})`).style = "background : white"
     console.log(num)
@@ -59,7 +59,7 @@ function changeSlide(num, mov) {
     console.log(indexS)
     textTitle.innerHTML = `<h2>${listCat[num].name.substring(0, indexS).toUpperCase()}</h2>`
     console.log(document.querySelector("#textTitle h2").offsetWidth / 2)
-    let leftLetter = window.innerWidth * (26 / 100) - (document.querySelector("#textTitle h2").offsetWidth / 2)
+    let leftLetter = window.innerWidth * (31 / 100) - (document.querySelector("#textTitle h2").offsetWidth / 2)
     textTitle.innerHTML = ""
 
     /////////////////////////////////////////////////////////////////////////
@@ -73,7 +73,7 @@ function changeSlide(num, mov) {
             if (i === indexS) {
                 textTitle.innerHTML += `<h2>${listCat[num].name.substring(indexS, listCat[num].name.length).toUpperCase()}</h2>`
                 console.log(document.querySelector("#textTitle :last-child").offsetWidth / 2)
-                leftLetter = window.innerWidth * (26 / 100) - (document.querySelector("#textTitle :last-child").offsetWidth / 2)
+                leftLetter = window.innerWidth * (31 / 100) - (document.querySelector("#textTitle :last-child").offsetWidth / 2)
                 document.querySelector("#textTitle :last-child").classList.add("none")
             } else {
                 leftLetter += document.querySelector("#textTitle :last-child").offsetWidth
@@ -105,7 +105,7 @@ function changeSlide(num, mov) {
         }
     }
 
-    arrows.style = `color : ${listCat[num].color}dd`
+    arrows.style = `color : ${listCat[num].color}`
     document.querySelector("#imgSlide").src = listCat[num].img
     linkCreation.addEventListener("mouseover", () => {
         linkCreation.style = `border: ${listCat[num].color}00 solid 3px; background: ${listCat[num].color}cc; color : white`
