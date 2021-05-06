@@ -3,30 +3,24 @@ const axios = require('axios');
 const app = express();
 const http = require('http').Server(app);
 const port = process.env.PORT || 3000;
-
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
-
-
+//port http
 http.listen(port, () => {
     console.log(`http://localhost:${port}/`);
 });
-
 app.use(express.static(__dirname + '/public'));
 
+
+
+//select link to start
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
 
+//request post in api dribbble
 async function requestShots() {
     const response = await axios.get(`https://api.dribbble.com/v2/user/shots?access_token=${process.env.API_KEY}&per_page=100`)
     try {
@@ -37,6 +31,9 @@ async function requestShots() {
         console.log(err)
     }
 }
+
+
+//request user data in api dribbble
 async function requestUser() {
     const response = await axios.get(`https://api.dribbble.com/v2/user/?access_token=${process.env.API_KEY}`)
     try {
@@ -47,6 +44,6 @@ async function requestUser() {
         console.log(err)
     }
 }
-
+//call request function
 requestShots()
 requestUser()
