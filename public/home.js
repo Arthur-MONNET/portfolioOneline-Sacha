@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
 
 
 function changeSlide(num, mov) {
-    document.querySelector("#linkCreations").href = `projects.html?cat=${num}`
+    document.querySelector("#linkCreations").href = `projects.html?cat=0`
     document.querySelector("#pointSlide h3").innerHTML = num
     document.querySelector(`#pointSlide :nth-child(${num + 2})`).style = "background : white"
     console.log(num)
