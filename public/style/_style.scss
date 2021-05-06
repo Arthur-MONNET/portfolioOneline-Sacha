@@ -19,7 +19,31 @@ body{
   overflow-x: hidden;
   background: white;
 }
+#scroll-wrap{
+   position: fixed;
+   transition: transform 1s cubic-bezier(0.22, 0.57, 0.25, 1);
+   display: flex;
+   align-items: center;
+   flex-direction:column ;
+ }
+.none{
+  display: none;
+}
 
+#pointer{
+  transition: transform 500ms, background 100ms;
+  width: 10px;
+  height: 10px;
+  background:#000000;
+  border: solid 1px #000000;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 100;
+  pointer-events: none;
+  display: none;
+}
+
+/*------------------------------------nav------------------------------------*/
 nav{
   z-index: 2;
   display: flex;
@@ -73,6 +97,9 @@ nav{
   transition: background 1s ease;
 }
 
+/*------------------------------------fin nav------------------------------------*/
+
+
 #firstPage{
   top : 0;
   height: calc(100vh - 280px);
@@ -85,274 +112,5 @@ nav{
   justify-content: center;
   transition: background-color 0.5s;
 }
-#contacts{
-  top : 0;
-  height: calc(100vh - 280px);
-  width: 60vw;
-  padding: 200px 20vw 80px 20vw;
-  background: #0A192E;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-#imgPres{
-  width :40vw;
-  height :100%;
-}
-#presFirstPage{
-  width :500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#secondIcon{
-  width: 250px;
-  height: 250px;
-}
-#underFistPage{
-  background: white;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  z-index: -10;
-}
-#slideAndImg{
-  height: 60vh;
-  width: 80vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-#contentSlide{
-  width: 32vw;
-  margin-left: 5vw;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#imgSlide{
-  transition: background-image 0.5s;
-  width: 40vw;
-  object-fit: contain;
-  //clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );
-  z-index: 1;
-}
-#decoSlide{
-  right: -20px;
-  height: 100vh;
-  width: 30vw;
-  position: absolute;
-  transition: background 1s ;
-}
-#arrows{
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 200px;
-  height: 40px;
-  font-size: 60px;
-  transition: color 1s;
-}
-.imgProject{
-  width: 100%;
-  height: 30%;
-  margin: 5vh 0;
-}
-#linkCreations{
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  padding:5px 8px;
-  transition: border 0.5s, background 0.5s, color 0.2s;
-}
-#firstPageLine{
-  height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  background: white;
-  margin: 0 100px;
-}
-#name{
-  font-family: 'Raleway', sans-serif;
-  font-size: 4.5vw;
-  font-weight: bold;
-}
-#underName{
-  font-family: 'Raleway', sans-serif;
-  font-size: 2.8vw;
-  font-weight: 100;
-}
-#pointer{
-  transition: transform 500ms, background 100ms;
-  width: 10px;
-  height: 10px;
-  background:#000000;
-  border: solid 1px #000000;
-  border-radius: 50%;
-  position: fixed;
-  z-index: 100;
-  pointer-events: none;
-  display: none;
-}
-#titleProjects{
-  width: 100vw;
-  height: 40vh;
-  margin-bottom: -5vh;
-  padding-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#titleProjects h1{
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 10vh;
-  font-size: 70px;
-  font-weight: 600;
-}
-#titleProjects a{
-  font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  font-weight: 200;
-}
-#titleProjects p{
-  font-family: 'Raleway', sans-serif;
-  margin:0 1vw;
-  font-size: 30px;
-  font-weight: 200;
-}
-#cats{
-  display: flex;
-  align-items: center;
-}
-#listProjects{
-  display: flex;
-  flex-direction: column;
-  width: 80vw;
-}
-.projects{
-  width: 100%;
-  padding :15vh 0 ;
-  display: flex;
-  height: 30vh;
-  justify-content: center;
-  align-items: center;
-}
-.imageProjects{
-  width: 35vw;
-  margin-top: 100%;
-  object-fit: cover;
-  transition: margin-top 1s ease-out;
-}
-.textProject{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.spaceProject{
-  width: 3vw;
-}
-#underName{
-  color: white;
-}
-#name{
-  color: white;
-}
-.syntProject{
-  opacity: 0;
-  margin-left : 0;
-  font-size: 1vw;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  transition: opacity 0.4s 0.8s;
-}
-.descProject{
-  padding: 3vh 30px 30px 30px;
-  height: 12vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.numProject{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-}
-.numProject h2{
-  opacity: 0;
-   font-size: 130px;
-  font-family: 'Raleway', sans-serif;
-   font-weight: 600;
-   transition: opacity 0.3s ;
- }
-.lineProject{
-  height: 3px;
-  margin: 0 20px;
-  width: 0;
-  border-radius: 3px;
-  background: black;
-  transition: width 0.5s;
-}
-#scroll-wrap{
-  position: fixed;
-  transition: transform 1s cubic-bezier(0.22, 0.57, 0.25, 1);
-  display: flex;
-  align-items: center;
-  flex-direction:column ;
-}
-.none{
-  display: none;
-}
-.textProject a{
-  padding: 0 80px;
-}
-.underTextProject{
-  display: flex;
-  align-items: flex-end;
-}
-.projects h3{
-  font-size: 2.5vw;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  opacity: 0;
-  margin-left : 0;
-  transition:  margin-left 0.5s 0.6s, opacity 0.5s 0.6s;
-}
-#contentSlide h2{
-  font-family: 'Raleway', sans-serif;
-  font-size: 70px;
-  font-weight: 700;
-}
-#contentSlide a h5{
-  font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-}
-#textTitle{
-  display: flex;
-  flex-direction: row;
-  margin: 3vh 0;
-}
-#textTitle h2{
-  position: absolute;
-  text-align: center;
-  transition: opacity 0.2s ease-out,margin-left 0.2s ease-out;
-}
-.spaceTitle {
-  width: 20px;
-}
 
 
-@media screen and (min-width: 1420px){
-}

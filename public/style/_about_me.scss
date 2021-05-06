@@ -1,14 +1,29 @@
+
+/*--------------------------------------style of aboutMe.html--------------------------------------*/
+
 #scroll-wrap{
   height: 100vh;
   justify-content: flex-end;
 }
+#titleDescMe {
+  margin-bottom: 10vh;
+  width: 100vw;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
 #descMe-wrapper{
   width: 70vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20vh;
+  margin-bottom: 18vh;
 }
+
+/*----------in descMe wrapper----------*/
+
 #descMe {
   width: 40%;
   height: 40vh;
@@ -17,6 +32,10 @@
   justify-content: space-between;
   flex-direction: column;
 }
+#iconDesc{
+   position: relative;
+   height: 40px;
+ }
 #descMe pre{
   position: relative;
   text-align: center;
@@ -31,10 +50,7 @@
   height: 5px;
   background: #FD8568;
 }
-#iconDesc{
-  position: relative;
-  height: 40px;
-}
+
 #download {
   height: 26px;
   display: flex;
@@ -49,11 +65,3 @@
   background: #FD8568;
 }
 
-#titleDescMe {
-  margin-bottom: 10vh;
-  width: 100vw;
-  text-align: center;
-  font-size: 35px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-}

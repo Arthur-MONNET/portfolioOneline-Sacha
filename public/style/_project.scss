@@ -1,9 +1,17 @@
+
+/*------------------------------------style in project.html------------------------------------*/
+
 body{
   height : 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+#scroll-wrap{
+  width: 80vw;
+}
+
 #titleProject{
   width: 100%;
   height: 13vh;
@@ -25,9 +33,28 @@ body{
   font-size: 40px;
   font-weight: 600;
 }
+
+#img1-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 #img1{
+  margin: 0 5vw;
   height: 60vh;
 }
+.button{
+  position: relative;
+  transition: color 0.2s;
+  font-size: 60px;
+  color: #9a9a9a;
+}
+.button:hover{
+  color: #6e6e6e;
+}
+
+
 #text1{
   width: 100%;
   display: flex;
@@ -75,7 +102,4 @@ body{
   height: 15vh;
   margin-left: 3vw;
   background: black;
-}
-#scroll-wrap{
-  width: 80vw;
 }
