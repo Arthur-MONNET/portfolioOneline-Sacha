@@ -1,4 +1,4 @@
-
+const arrow = Array.from(document.querySelectorAll(".button"))
 const titleProject = document.querySelector("#titleProject h3")
 const text1 = document.querySelector("#text1 p")
 const image1 = document.querySelector("#img1")
@@ -22,6 +22,8 @@ window.addEventListener("load", () => {
         text1.innerHTML= listProject[projectIndex].desc1
         image2.src = listProject[projectIndex].img2
         text2.innerHTML= listProject[projectIndex].desc2
+        arrow[0].style=`color: ${listProject[projectIndex].color}`
+        arrow[1].style=`color: ${listProject[projectIndex].color}`
         arrowLeft.href = `./project.html?project=${projectIndexN}`
         arrowRight.href = `./project.html?project=${projectIndexP}`
         setTimeout(()=>{

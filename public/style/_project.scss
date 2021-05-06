@@ -46,12 +46,12 @@ body{
 }
 .button{
   position: relative;
-  transition: color 0.2s;
+  transition: filter 0.2s;
   font-size: 60px;
   color: #9a9a9a;
 }
 .button:hover{
-  color: #6e6e6e;
+  filter : brightness(0.9) saturate(2.4);
 }
 
 
