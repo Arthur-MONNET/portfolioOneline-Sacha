@@ -1,0 +1,42 @@
+body{
+  height : 100vh;
+}
+.data_contact{
+ height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#icon1 {
+  width: 30px;
+  height: 30px;
+}
+#icon2 {
+  width: 30px;
+  height: 24px;
+}
+#icon3 {
+  width: 29px;
+  height: 30px;
+}
+.data_contact h3{
+  color: white;
+  font-size: 1.8vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  margin: 40px 0;
+}
+.data_contact h5{
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.8vw;
+  font-weight: 200;
+  color: white;
+}
+.pointContact{
+  background: white;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin: 40px 60px 0 60px;
+}
