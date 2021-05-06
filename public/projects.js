@@ -1,5 +1,6 @@
 const listProjectsWrapper = document.querySelector("#listProjects")
 let order = "row"
+let orderOther = "0";
 let numProject = 1;
 let nbProjectCat;
 let numProjectWritten = "01."
@@ -25,7 +26,7 @@ window.addEventListener("load", () => {
             console.log(listProject[i].cat)
             console.log(numCat)
             if (parseInt(numCat) === 0) {
-                body.style.height = `calc(30vh + 100px + ${60 * nbProject}vh`
+                body.style.height = `calc(40vh + 100px + ${60 * nbProject}vh`
                 console.log(numProject);
                 if (numProject < 10) {
                     numProjectWritten = `0${numProject}.`
@@ -33,16 +34,25 @@ window.addEventListener("load", () => {
                     numProjectWritten = `${numProject}.`
                 }
                 listProjectsWrapper.innerHTML += `<div class="projects" style="flex-direction: ${order}; justify-content: flex-start">
-            <a href="project.html?project=${i}"><img src="${listProject[i].img1}" class="imageProjects"></a>
-            <div class="numProject"><div class="lineProject" style="background: ${listProject[i].color}99"></div><h2>${numProjectWritten}</h2></div>
-            <div class="textProject"><a href="project.html?project=${i}"><h3 ${orderText}>${listProject[i].title}</h3></a></div>
-        </div>`
+                <a href="project.html?project=${i}"><img src="${listProject[i].img1}" class="imageProjects"></a>
+                <div class="spaceProject"></div>
+                <div class="textProject" style="${orderOther}">
+                    <a href="project.html?project=${i}"><h3 ${orderText}>${listProject[i].title}</h3></a>
+                    <div class="underTextProject" style="flex-direction: ${order}">
+                        <div class="numProject"><h2>${numProjectWritten}</h2></div>
+                        <div class="descProject" style="align-items: ${orderOther}">
+                            <div class="syntProject"><p ${orderText}>${listProject[i].synt}<br>${listProject[i].logi}</p></div>
+                            <div class="lineProject"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
 
                 numProject++;
                 if (order === "row") {
-                    order = "row-reverse", orderText = `style = "text-align : end"`
+                    order = "row-reverse", orderText = `style = "text-align : end"`,orderOther = "flex-end"
                 } else {
-                    order = "row", orderText = ""
+                    order = "row", orderText = "" ,orderOther = "flex-start"
                 }
                 document.querySelector(".projects .imageProjects").style = "margin-top:0"
                 setTimeout(() => {
@@ -55,6 +65,7 @@ window.addEventListener("load", () => {
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : 0;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                     }
+                    document.querySelector(".syntProject").style = `opacity:1;`
                 }, 100)
             } else if (numCat === listProject[i].cat) {
                 nbProjectCat = 0;
@@ -67,7 +78,7 @@ window.addEventListener("load", () => {
                     }
                 }
                 console.log(nbProjectCat)
-                body.style.height = `calc(30vh + 100px + ${60 * nbProjectCat}vh`
+                body.style.height = `calc(40vh + 100px + ${60 * nbProjectCat}vh`
                 console.log(numCat);
                 if (numProject < 10) {
                     numProjectWritten = `0${numProject}.`
@@ -75,28 +86,39 @@ window.addEventListener("load", () => {
                     numProjectWritten = `${numProject}.`
                 }
                 listProjectsWrapper.innerHTML += `<div class="projects" style="flex-direction: ${order}; justify-content: flex-start">
-            <a href="project.html?project=${i}"><img src="${listProject[i].img1}" class="imageProjects"></a>
-            <div class="numProject"><div class="lineProject" style="background: ${listProject[i].color}99"></div><h2>${numProjectWritten}</h2></div>
-            <div class="textProject"><a href="project.html?project=${i}"><h3 ${orderText}>${listProject[i].title}</h3></a></div>
-        </div>`
+                <a href="project.html?project=${i}"><img src="${listProject[i].img1}" class="imageProjects"></a>
+                <div class="spaceProject"></div>
+                <div class="textProject" style="${orderOther}">
+                    <a href="project.html?project=${i}"><h3 ${orderText}>${listProject[i].title}</h3></a>
+                    <div class="underTextProject" style="flex-direction: ${order}">
+                        <div class="numProject"><h2>${numProjectWritten}</h2></div>
+                        <div class="descProject" style="align-items: ${orderOther}">
+                            <div class="syntProject"><p ${orderText}>${listProject[i].synt}<br>${listProject[i].logi}</p></div>
+                            <div class="lineProject"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
 
                 numProject++;
                 if (order === "row") {
-                    order = "row-reverse", orderText = `style = "text-align : end"`
+                    order = "row-reverse", orderText = `style = "text-align : end"`,orderOther = "flex-end"
                 } else {
-                    order = "row", orderText = ""
+                    order = "row", orderText = "" ,orderOther = "flex-start"
                 }
                 document.querySelector(".projects .imageProjects").style = "margin-top:0"
                 setTimeout(() => {
-                    document.querySelector(".projects .lineProject").style = "height:60%"
+                    document.querySelector(".projects .lineProject").style = "width:8vw"
                     document.querySelector(".projects .numProject h2").style = "opacity:1;margin-bottom : 0"
                     if (document.querySelector(".projects").style.flexDirection === "row-reverse") {
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : 135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : 0px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+
                     } else {
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : 0;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                     }
+                    document.querySelector(".syntProject").style = `opacity:1;`
                 }, 100)
             }
 
@@ -107,14 +129,17 @@ window.addEventListener("load", () => {
 })
 window.addEventListener("scroll", () => {
     let i = 0;
+    let listSynt = Array.from(document.querySelector(".syntProject"))
+    console.log(listSynt)
     document.querySelectorAll(`.projects`).forEach(project => {
         i++;
         if (window.scrollY + window.innerHeight > window.innerHeight * 3.5 / 10 + (window.innerHeight * 6 / 10) * i) {
             project.querySelector(".imageProjects").style = "margin-top:0"
 
             setTimeout(() => {
-                project.querySelector(".lineProject").style = "height:60%"
+                project.querySelector(".lineProject").style = "width:8vw"
                 project.querySelector(".numProject h2").style = "opacity:1;margin-bottom : 0"
+                project.querySelector(".syntProject").style = `opacity:1;`
                 if (project.style.flexDirection === "row-reverse") {
                     project.querySelector(".textProject h3").style = `opacity:1;margin-left : 0;text-align: ${project.querySelector("h3").style.textAlign}`
                 } else {
@@ -127,6 +152,7 @@ window.addEventListener("scroll", () => {
             setTimeout(() => {
                 project.querySelector(".lineProject").style = ""
                 project.querySelector(".numProject h2").style = ""
+                project.querySelector(".syntProject").style = `opacity:0;`
                 if (project.style.flexDirection === "row-reverse") {
                     project.querySelector(".textProject h3").style = `opacity:0;margin-left : 135px;text-align: ${project.querySelector("h3").style.textAlign}`
                 } else {

@@ -17,14 +17,14 @@ const requestProjects = async () => {
 let dataProjects;
 let nbProject = 0
 let nbCat = 0
-let img1, img2, desc1, desc2,cat, title, color, indexProject, indexCat, listProject = [], listCat = []
+let img1, img2, desc1, desc2,synt ,logi, cat, title, color, indexProject, indexCat, listProject = [], listCat = []
 requestProjects().then(response => {
     console.log(response.data)
     dataProjects = response.data
 
 
     for (let i = 0; i < dataProjects.length; i++) {
-        indexProject = 0, indexCat = 0, img1 = 0, desc1 = 0, img2 = 0, desc2 = 0, title = 0, color = 0,cat=0;
+        indexProject = 0, indexCat = 0, img1 = 0, desc1 = 0, img2 = 0, desc2 = 0,synt=0,logi = 0, title = 0, color = 0,cat=0;
         for (let j = 0; j < dataProjects[i].tags.length; j++) {
             if (dataProjects[i].tags[j].indexOf("project") !== -1) {
                 nbProject++
@@ -38,7 +38,10 @@ requestProjects().then(response => {
 
                 if (img1 !== 0) {
                     console.log("img1 : " + img1)
+                    listProject[indexProject].logi = logi
                     listProject[indexProject].cat = cat
+
+                    listProject[indexProject].synt = synt
                     listProject[indexProject].img1 = img1
                     listProject[indexProject].color = color
                     listProject[indexProject].title = title
@@ -51,12 +54,16 @@ requestProjects().then(response => {
             if (dataProjects[i].tags[j].indexOf("image") !== -1) {
                 if (dataProjects[i].tags[j].indexOf("image1") !== -1) {
                     if (indexProject !== 0) {
+                        listProject[indexProject].logi = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$log") + 5, dataProjects[i].description.indexOf("!log"))
                         listProject[indexProject].cat = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$cat") + 5, dataProjects[i].description.indexOf("!cat"))
                         listProject[indexProject].color = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$color") + 7, dataProjects[i].description.indexOf("!color"))
                         listProject[indexProject].title = dataProjects[i].title.replaceAll("_", " ")
                         listProject[indexProject].img1 = dataProjects[i].images.hidpi
+                        listProject[indexProject].synt = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$synt") + 6, dataProjects[i].description.indexOf("!synt"))
                         listProject[indexProject].desc1 = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$desc") + 6, dataProjects[i].description.indexOf("!desc"))
                     } else {
+                        logi = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$log") + 5, dataProjects[i].description.indexOf("!log"))
+                        synt = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$synt") + 6, dataProjects[i].description.indexOf("!synt"))
                         cat = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$cat") + 5, dataProjects[i].description.indexOf("!cat"))
                         img1 = dataProjects[i].images.hidpi
                         color = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$color") + 7, dataProjects[i].description.indexOf("!color"))
@@ -68,7 +75,6 @@ requestProjects().then(response => {
                     if (indexProject !== 0) {
                         listProject[indexProject].img2 = dataProjects[i].images.hidpi
                         listProject[indexProject].desc2 = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$desc") + 6, dataProjects[i].description.indexOf("!desc"))
-
                     } else {
                         img2 = dataProjects[i].images.hidpi
                         desc2 = dataProjects[i].description.substring(dataProjects[i].description.indexOf("$desc") + 6, dataProjects[i].description.indexOf("!desc"))

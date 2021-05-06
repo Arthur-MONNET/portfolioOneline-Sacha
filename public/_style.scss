@@ -83,7 +83,7 @@ nav{
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: background-color 2s;
+  transition: background-color 1s;
 }
 #contacts{
   top : 0;
@@ -241,18 +241,26 @@ nav{
   width: 80vw;
 }
 .projects{
+  width: 100%;
   padding :15vh 0 ;
   display: flex;
   height: 30vh;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 .imageProjects{
-  height: 100%;
-  margin-top: 50%;
-  width: calc(550vw / 14.2);
+  width: 35vw;
+  margin-top: 100%;
   object-fit: cover;
   transition: margin-top 1s ease-out;
+}
+.textProject{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.spaceProject{
+  width: 3vw;
 }
 #underName{
   color: white;
@@ -260,10 +268,22 @@ nav{
 #name{
   color: white;
 }
+.syntProject{
+  opacity: 0;
+  margin-left : 0;
+  font-size: 1vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  transition: opacity 0.4s 0.8s;
+}
+.descProject{
+  padding: 3vh 30px 30px 30px;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .numProject{
-  height: 120%;
-  width: 150px;
-  padding:10px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,19 +291,19 @@ nav{
 
 }
 .numProject h2{
-  margin-bottom : 150px;
   opacity: 0;
-   font-size: 100px;
-   font-family: 'Exo', sans-serif;
-   font-weight: 400;
-   transition: opacity 0.3s , margin-bottom 0.5s;
+   font-size: 130px;
+  font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+   transition: opacity 0.3s ;
  }
 .lineProject{
-  height: 0;
-  width: 6px;
+  height: 3px;
+  margin: 0 20px;
+  width: 0;
   border-radius: 3px;
   background: black;
-  transition: height 0.5s;
+  transition: width 0.5s;
 }
 #scroll-wrap{
   position: fixed;
@@ -295,17 +315,18 @@ nav{
 .none{
   display: none;
 }
-.textProject{
-  width: 25vw;
+.textProject a{
+  padding: 0 80px;
+}
+.underTextProject{
+  display: flex;
+  align-items: flex-end;
 }
 .projects h3{
-  position: absolute;
-  width: 25vw;
-  font-size: 4vw;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 300;
+  font-size: 2.5vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
   opacity: 0;
-  margin-right : 0;
   margin-left : 0;
   transition:  margin-left 0.5s 0.6s, opacity 0.5s 0.6s;
 }
@@ -313,14 +334,6 @@ nav{
   font-family: 'Raleway', sans-serif;
   font-size: 70px;
   font-weight: 700;
-}
-#descProject{
-  transition: opacity 1s;
-  text-align: center;
-  opacity : 0;
-  font-size: 25px;
-  width: 540px;
-  margin-bottom: 3vh;
 }
 #contentSlide a h5{
   font-family: 'Raleway', sans-serif;
@@ -342,11 +355,4 @@ nav{
 
 
 @media screen and (min-width: 1420px){
-  #listProjects{
-    width: 1200px;
-    padding : 0;
-  }
-  .imageProjects{
-    width:550px;
-  }
 }
