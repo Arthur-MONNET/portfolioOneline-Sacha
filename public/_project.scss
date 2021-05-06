@@ -6,7 +6,7 @@ body{
 }
 #titleProject{
   width: 100%;
-  height: 10vh;
+  height: 13vh;
   margin-top: 17vh;
   margin-bottom: 8vh;
   display: flex;
@@ -17,14 +17,13 @@ body{
 }
 #titleProject div {
   width: 150px;
-  height: 4px;
-  border-radius: 4px;
+  height: 3px;
   background: black;
 }
 #titleProject h3 {
+  font-family: 'Raleway', sans-serif;
   font-size: 40px;
-  font-family: 'Kanit', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
 }
 #img1{
   height: 60vh;
@@ -41,15 +40,14 @@ body{
 #text1 p{
   width: 40vw;
   text-align: left;
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
-  font-family: 'Kanit', sans-serif;
   font-weight: 200;
 }
 #text1 div{
-  width: 4px;
+  width: 3px;
   height: 15vh;
   margin-right: 3vw;
-  border-radius: 4px;
   background: black;
 }
 #img2{
@@ -68,15 +66,14 @@ body{
 #text2 p{
   width: 40vw;
   text-align: right;
+  font-family: 'Raleway', sans-serif;
   font-size: 20px;
-  font-family: 'Kanit', sans-serif;
   font-weight: 200;
 }
 #text2 div{
-  width: 4px;
+  width: 3px;
   height: 15vh;
   margin-left: 3vw;
-  border-radius: 4px;
   background: black;
 }
 #scroll-wrap{
