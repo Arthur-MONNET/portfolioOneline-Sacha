@@ -4,6 +4,7 @@ const linkCreation = document.querySelector("#linkCreations")
 const arrowLeft = document.querySelector("#arrowLeft")
 const arrowRight = document.querySelector("#arrowRight")
 let numSlide = 1
+moveSlide = 1
 const colors = document.querySelectorAll("#buttonsColor button")
 
 
@@ -45,6 +46,7 @@ window.addEventListener("load", () => {
 //function that allows to slider to the left or to the right depending on the direction request
 function changeSlide(num, mov) {
     document.querySelector("#linkCreations").href = `projects.html?cat=0`
+    document.querySelector("#imgSlide").style = "opacity : 0"
     document.querySelector("#pointSlide h3").innerHTML = num
     document.querySelector(`#pointSlide :nth-child(${num + 2})`).style = "background : white"
     /////////////////////////////////////////////////////////////////////////
@@ -96,6 +98,8 @@ function changeSlide(num, mov) {
     }
 
     let letters = Array.from(document.querySelectorAll("#textTitle h2"))
+    document.querySelector("#imgSlide").style = "opacity : 1"
+
     //anim swipe left
     if (mov === -1) {
         for (let i = listCat[numSlide].name.length; i > -1; i--) {
@@ -103,6 +107,8 @@ function changeSlide(num, mov) {
             setTimeout(() => {
                 letters[letters.length - 1 - i].style = `left:${letters[letters.length - 1 - i].style.left};margin-top:${letters[letters.length - 1 - i].style.marginTop};opacity:1`
             }, 10 * i)
+
+
         }
     //anim swipe right
     } else {
@@ -141,15 +147,17 @@ arrowLeft.addEventListener("click", () => {
         nbLetters++;
     }
     document.querySelector(`#pointSlide :nth-child(${numSlide + 2})`).style = "background : black"
+    document.querySelector("#imgSlide").style = "opacity : 0"
     numSlide--
+    moveSlide = -1
     if (numSlide < 1) {
         numSlide = nbCat
     }
     console.log(numSlide)
     //change slide after text anim
     setTimeout(() => {
-        changeSlide(numSlide, -1)
-    }, 10 * nbLetters + 50)
+        changeSlide(numSlide, moveSlide)
+    }, 200)
 
 })
 
@@ -167,15 +175,21 @@ arrowRight.addEventListener("click", () => {
         nbLetters++;
     }
     document.querySelector(`#pointSlide :nth-child(${numSlide + 2})`).style = "background : black"
+    document.querySelector("#imgSlide").style = "opacity : 0"
     numSlide++
+    moveSlide = 1
     if (numSlide > nbCat) {
         numSlide = 1
     }
     console.log(numSlide)
     //change slide after text anim
     setTimeout(() => {
-        changeSlide(numSlide, 1)
-    }, 10 * nbLetters + 50)
+        changeSlide(numSlide, moveSlide)
+    }, 200)
+})
+
+window.addEventListener("resize", ()=>{
+    changeSlide(numSlide, moveSlide)
 })
 
 

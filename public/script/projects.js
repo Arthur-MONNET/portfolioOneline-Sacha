@@ -70,8 +70,8 @@ window.addEventListener("load", () => {
                     document.querySelector(".projects .lineProject").style = "height:60%"
                     document.querySelector(".projects .numProject h2").style = "opacity:1;margin-bottom : 0"
                     if (document.querySelector(".projects").style.flexDirection === "row-reverse") {
-                        document.querySelector(".projects h3").style = `opacity:1;margin-left : 135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
-                        document.querySelector(".projects h3").style = `opacity:1;margin-left : 0px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                        document.querySelector(".projects h3").style = `opacity:1;margin-right : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                        document.querySelector(".projects h3").style = `opacity:1;margin-right : 0px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                     } else {
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : 0;text-align: ${document.querySelector(".projects h3").style.textAlign}`
@@ -126,8 +126,8 @@ window.addEventListener("load", () => {
                     document.querySelector(".projects .lineProject").style = "width:8vw"
                     document.querySelector(".projects .numProject h2").style = "opacity:1;margin-bottom : 0"
                     if (document.querySelector(".projects").style.flexDirection === "row-reverse") {
-                        document.querySelector(".projects h3").style = `opacity:1;margin-left : 135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
-                        document.querySelector(".projects h3").style = `opacity:1;margin-left : 0px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                        document.querySelector(".projects h3").style = `opacity:1;margin-right : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
+                        document.querySelector(".projects h3").style = `opacity:1;margin-right : 0px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
 
                     } else {
                         document.querySelector(".projects h3").style = `opacity:1;margin-left : -135px;text-align: ${document.querySelector(".projects h3").style.textAlign}`
@@ -184,7 +184,7 @@ window.addEventListener("scroll", () => {
                 project.querySelector(".numProject h2").style = ""
                 project.querySelector(".syntProject").style = `opacity:0;`
                 if (project.style.flexDirection === "row-reverse") {
-                    project.querySelector(".textProject h3").style = `opacity:0;margin-left : 135px;text-align: ${project.querySelector("h3").style.textAlign}`
+                    project.querySelector(".textProject h3").style = `opacity:0;margin-right : -135px;text-align: ${project.querySelector("h3").style.textAlign}`
                 } else {
                     project.querySelector(".textProject h3").style = `opacity:0;margin-left : -135px;text-align: ${project.querySelector("h3").style.textAlign}`
                 }

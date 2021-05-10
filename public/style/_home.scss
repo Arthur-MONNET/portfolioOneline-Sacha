@@ -86,7 +86,8 @@ body{
   justify-content: center;
 }
 #imgSlide{
-  transition: background-image 0.5s;
+  opacity: 1;
+  transition: opacity 0.2s;
   width: 40vw;
   object-fit: contain;
   /*clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );*/
@@ -105,7 +106,7 @@ body{
 #textTitle{
   display: flex;
   flex-direction: row;
-  margin: 3vh 0;
+  margin: 5vh 0;
 }
 #textTitle h2 {
   position: absolute;
