@@ -1,0 +1,130 @@
+
+/*------------------------------------style in projects.html------------------------------------*/
+
+body{
+  height: 100vh;
+}
+#listProjects{
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+/*------title------*/
+
+#titleProjects{
+  width: 100vw;
+  height: 40vh;
+  margin-bottom: -5vh;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#titleProjects h1{
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 10vh;
+  font-size: 70px;
+  font-weight: 600;
+}
+#titleProjects a{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+#titleProjects p{
+  font-family: 'Raleway', sans-serif;
+  margin:0 1vw;
+  font-size: 30px;
+  font-weight: 200;
+}
+#cats{
+  display: flex;
+  align-items: center;
+}
+
+/*------project------*/
+
+.projects{
+  width: 100%;
+  padding :15vh 0 ;
+  display: flex;
+  height: 30vh;
+  justify-content: center;
+  align-items: center;
+}
+.imageProjects{
+  width: 35vw;
+  margin-top: 100%;
+  object-fit: cover;
+  transition: margin-top 1s ease-out;
+}
+.textProject{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.spaceProject{
+  width: 3vw;
+}
+
+
+
+.numProject{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.numProject h2{
+  opacity: 0;
+  font-size: 130px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  transition: opacity 0.3s ;
+}
+
+
+
+.descProject{
+  padding: 3vh 30px 30px 30px;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.syntProject{
+   opacity: 0;
+   margin-left : 0;
+   font-size: 1vw;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 300;
+   transition: opacity 0.4s 0.8s;
+ }
+.lineProject{
+  height: 3px;
+  margin: 0 20px;
+  width: 0;
+  border-radius: 3px;
+  background: black;
+  transition: width 0.5s;
+}
+.projects h3{
+  font-size: 2.5vw;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  opacity: 0;
+  margin-left : 0;
+  transition:  margin-left 0.5s 0.6s,margin-right 0.5s 0.6s, opacity 0.5s 0.6s;
+}
+.textProject a{
+  padding: 0 80px;
+}
+.underTextProject{
+  display: flex;
+  align-items: flex-end;
+}
+
+

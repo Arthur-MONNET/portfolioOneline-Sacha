@@ -1,0 +1,74 @@
+@media screen and (max-width: 1400px) {
+  #download {
+    font-size: 1.42vw;
+  }
+  #descMe pre {
+    width: 32.14vw;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #descMe-wrapper {
+    flex-direction: column;
+    margin-bottom: 5vh;
+  }
+  #download {
+    font-size: 20px;
+  }
+  #descMe pre {
+    width: 70vw;
+    font-size: 2.67vh;
+    margin: 10vh 0;
+  }
+  #descMe {
+    height: auto;
+  }
+  #lineDescMe {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #download {
+    width: 188px;
+  }
+  #descMe pre {
+    margin: 5vh 0;
+  }
+  #titleDescMe {
+    margin-bottom: 7vh;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #download {
+    width: 188px;
+  }
+  #descMe pre {
+    font-size: 4.44vw;
+  }
+  #titleDescMe {
+    margin-bottom: 7vh;
+  }
+}
+
+/*--------------------------------------style of aboutMe.html--------------------------------------*/
+
+#scroll-wrap {
+  height: 100vh;
+  justify-content: flex-end;
+}
+
+/*----------in descMe wrapper----------*/
+
+#iconDesc {
+  position: relative;
+  height: 40px;
+}
+
+#lineDescMe {
+  width: 7vw;
+  height: 5px;
+  background: #FD8568;
+}
+

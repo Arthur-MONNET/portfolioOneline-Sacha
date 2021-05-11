@@ -1,0 +1,105 @@
+
+/*------------------------------------style in project.html------------------------------------*/
+
+body{
+  height : 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#scroll-wrap{
+  width: 80vw;
+}
+
+#titleProject{
+  width: 100%;
+  height: 13vh;
+  margin-top: 17vh;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+#titleProject div {
+  width: 150px;
+  height: 3px;
+  background: black;
+}
+#titleProject h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+#img1-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#img1{
+  margin: 0 5vw;
+  height: 60vh;
+}
+.button{
+  position: relative;
+  transition: filter 0.2s;
+  font-size: 60px;
+  color: #9a9a9a;
+}
+.button:hover{
+  filter : brightness(0.9) saturate(2.4);
+}
+
+
+#text1{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 15vh;
+  margin: 10vh 0 ;
+
+}
+#text1 p{
+  width: 40vw;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+#text1 div{
+  width: 3px;
+  height: 15vh;
+  margin-right: 3vw;
+  background: black;
+}
+#img2{
+  width: 100vw;
+  object-fit: cover;
+}
+#text2{
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 10vh 0;
+
+}
+#text2 p{
+  width: 40vw;
+  text-align: right;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
+#text2 div{
+  width: 3px;
+  height: 15vh;
+  margin-left: 3vw;
+  background: black;
+}

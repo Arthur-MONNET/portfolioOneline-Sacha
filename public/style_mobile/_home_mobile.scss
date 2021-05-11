@@ -1,0 +1,193 @@
+
+/*------------------------------------style in index.html------------------------------------*/
+
+body{
+  height: 200vh;
+}
+
+/*------upperPage------*/
+
+#presFirstPage{
+  width :500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#name{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 4.5vw;
+  font-weight: bold;
+}
+#underName{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8vw;
+  font-weight: 100;
+}
+#firstPageLine{
+   height: 24px;
+   width: 24px;
+   border-radius: 50%;
+   background: white;
+   margin: 0 100px;
+ }
+#secondIcon{
+  width: 250px;
+  height: 250px;
+}
+
+#buttonsColor {
+  position: absolute;
+  left: 70px;
+  width: 20px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#buttonsColor button{
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: solid white 1px;
+}
+
+/*------underPage------*/
+
+
+#underFistPage{
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: -10;
+}
+#slideAndImg{
+  height: 60vh;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#contentSlide{
+  width: 32vw;
+  margin-left: 5vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#imgSlide{
+  opacity: 1;
+  transition: opacity 0.2s;
+  width: 40vw;
+  object-fit: contain;
+  /*clip-path: polygon(0 50%,9.25vw 100% ,27.75vw 100% ,100% 50% ,27.75vw 0 ,9.25vw 0 );*/
+  z-index: 1;
+}
+#decoSlide{
+  right: -20px;
+  height: 100vh;
+  width: 30vw;
+  position: absolute;
+  transition: background 1s ;
+}
+
+/*title Slide*/
+
+#textTitle{
+  display: flex;
+  flex-direction: row;
+  margin: 5vh 0;
+}
+#textTitle h2 {
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.2s ease-out, margin-left 0.2s ease-out;
+  font-family: 'Raleway', sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+}
+.spaceTitle {
+  width: 20px;
+}
+
+/*arrow Slide*/
+
+#arrows{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  height: 40px;
+  font-size: 60px;
+  transition: color 1s;
+}
+
+.button{
+  transition: filter 0.2s;
+}
+.button:hover{
+  filter : brightness(0.9) saturate(2.4);
+}
+
+
+/*link Creations*/
+
+#linkCreations{
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding:5px 8px;
+  transition: border 0.5s, background 0.5s, color 0.2s;
+}
+#linkCreations h5{
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+}
+
+
+/*slide point*/
+
+#pointSlide{
+  position: absolute;
+  left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#pointSlide h3{
+  position: absolute;
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+}
+#linePointSlide{
+  margin-top: 60px;
+  background: black;
+  width: 2px;
+  height: 25px;
+  border-radius: 8px;
+}
+.point{
+  margin-top: 10px;
+  background: black;
+  border: solid black 1px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  transition: background 0.5s;
+}
+
+
